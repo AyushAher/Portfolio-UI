@@ -14,7 +14,9 @@ body {
   font-size: 16px;
   font-family: "inter" "Courier New", Courier, monospace;
 }
-
+.navbar {
+  height: 50px;
+}
 .navbar a {
   color: white;
 }
@@ -24,8 +26,9 @@ body {
 }
 
 .hero {
-  margin-top: 50px;
+  height: calc(100vh - 50px);
 }
+
 .hero-intro {
   display: flex;
   flex-direction: column;
@@ -33,18 +36,19 @@ body {
 }
 
 .hero-intro .title {
-  font-size: 25px;
+  font-size: 36px;
   text-align: center;
 }
 .hero-intro p {
   text-align: center;
   width: 40%;
-  margin: 15px 0 30px;
-  font-size: 14px;
+  margin: 30px 0;
+  font-size: 16px;
 }
 
 .gradient {
-  background: -webkit-linear-gradient(#b16de7, #f5795b);
+  background: -webkit-linear-gradient(left, #b16de7, #f5795b);
+  background: linear-gradient(to right, #b16de7, #f5795b); /* Standard syntax */
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -76,8 +80,15 @@ a.social-link:last-child {
   margin-right: 0;
 }
 
+#skills {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+}
+
 .btn-resume {
   border-color: white;
+  background-color: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(5px);
   border-radius: 20px;
   border: 1px solid;
   text-decoration: none;
@@ -93,6 +104,7 @@ a.social-link:last-child {
 }
 
 .skills > h3 {
+  font-size: 36px;
   text-underline-offset: 10px;
   margin-bottom: 30px;
 }
@@ -107,19 +119,14 @@ img.skill-img {
 .border-skills {
   border: 1px solid white;
   border-radius: 30px;
+  margin: 20px;
   padding: 20px 0;
 }
 
 .btn-resume-container {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
-.skills {
-  margin-top: 65px;
-}
-.skill-img-container {
-  width: 25%;
-}
 @media (max-width: 700px) {
   .hero {
     padding: 0 5%;
@@ -138,14 +145,25 @@ img.skill-img {
   .hero .title {
     font-size: 20px;
   }
-  .btn-resume-container {
-    margin-top: 20px;
+  .hero-intro p {
+    font-size: 14px;
+  }
+  .skills > h3 {
+    font-size: 26px;
+    margin-bottom: 0px;
+  }
+  .gradient {
+    font-size: inherit;
   }
 
-  .skills {
-    margin-top: 70px;
+  .btn-resume-container {
+    margin-bottom: 30px;
   }
-  .skill-img-container {
-    width: 100%;
+
+  img.skill-img {
+    width: 60px;
+    height: auto;
+    align-self: center;
+    margin: 20px 0;
   }
 }

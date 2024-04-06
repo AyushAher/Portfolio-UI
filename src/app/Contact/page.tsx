@@ -19,8 +19,8 @@ export default function ContactPage() {
 
   return (
     <>
-      <div className="container contact-form-container d-flex justify-content-center" id="contact-form">
-        <div className="col-md-8 border-solid">
+      <div className="contact-form-container d-flex justify-content-center" id="contact-form">
+        <div className="col-md-8">
           <h4 className="gradient text-center">Contact Me</h4>
           <form onSubmit={handleSubmit(SubmitContactForm)}>
             <div className="my-3">
@@ -57,6 +57,7 @@ export default function ContactPage() {
               <label htmlFor="name">Write your Message</label>
               <textarea
                 className="form-control"
+                rows={4}
                 id="name"
                 required
                 {...register("message")}

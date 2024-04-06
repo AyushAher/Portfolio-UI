@@ -6,14 +6,16 @@ import {
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faBars, faMobile } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 
 export default function Hero() {
-  const skillsUrlArray = [
-    { url: "/Images/docker.svg", title: "Docker" },
+  const skillsUrlArray: {
+    url: string;
+    title: string;
+  }[] = [
     { url: "/Images/angular.svg", title: "Angular" },
-    { url: "/Images/dotnet.svg", title: "Dotnet" },
     { url: "/Images/react.png", title: "React" },
+    { url: "/Images/dotnet.svg", title: "Dotnet" },
+    { url: "/Images/docker.svg", title: "Docker" },
     {
       url: "https://git-scm.com/images/logos/downloads/Git-Logo-White.svg",
       title: "Git",
@@ -27,6 +29,18 @@ export default function Hero() {
     {
       url: "https://wiki.postgresql.org/images/a/a4/PostgreSQL_logo.3colors.svg",
       title: "PostgreSQL",
+    },
+    {
+      url: "/Images/ubuntu.svg",
+      title: "Ubuntu",
+    },
+    {
+      url: "/Images/jenkins.png",
+      title: "Jenkins",
+    },
+    {
+      url: "/Images/notion.svg",
+      title: "Notion",
     },
   ];
 
@@ -75,7 +89,7 @@ export default function Hero() {
 
       <div
         id="hero"
-        className="hero d-flex flex-column justify-content-center align-items-center"
+        className="hero d-flex flex-column justify-content-evenly align-items-center"
       >
         <div>
           <img src="/Images/Me.webp" alt="Ayush Aher" className="hero-img" />
@@ -86,14 +100,14 @@ export default function Hero() {
             Consultant
             <br />& Jr. Full-Stack Developer
           </div>
-          <p className="my-5">
+          <p className="">
             Hey there! I&apos;m Ayush Aher, your friendly neighborhood Fullstack
             Web Developer. I&apos;ve been in the game for almost 3 years,
             building and managing web applications, and websites. Anything on
             your mind? Hit me up!
           </p>
         </div>
-        <div className="d-flex justify-content-center align-items-center">
+        <div className="my-4 d-flex justify-content-center align-items-center">
           <a className="social-link" href="https://github.com/AyushAher">
             <FontAwesomeIcon icon={faGithub} />
           </a>
@@ -126,19 +140,26 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      <div id="skills" className="col-md-8 skills container border-skills">
-        <h3 className="text-center text-decoration-underline gradient">
-          Skills
-        </h3>
-        <div className="justify-content-center d-flex flex-wrap">
-          {skillsUrlArray.map((x) => (
-            <div
-              key={x.title}
-              className="skill-img-container d-flex justify-content-center align-items-center"
-            >
-              <img src={x.url} alt={x.title} className="skill-img" />
-            </div>
-          ))}
+      <div className="d-flex justify-content-center align-items-center">
+        <div id="skills" className="col-md-8 skills border-skills">
+          <h3 className="text-center text-decoration-underline gradient">
+            Skills
+          </h3>
+          <div className="d-flex flex-wrap justify-content-center align-items-center">
+            {skillsUrlArray.map((x) => (
+              <div
+                key={x.title}
+                className="col-md-2 d-flex justify-content-center align-items-center mx-3"
+              >
+                <img
+                  src={x.url}
+                  alt={x.title}
+                  title={x.title}
+                  className="skill-img"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
